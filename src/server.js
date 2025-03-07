@@ -1,3 +1,7 @@
+import swaggerUi from 'swagger-ui-express';
+import swaggerDocument from './swagger.js';
+
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 const express = require("express");
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
@@ -25,3 +29,4 @@ app.use("/api/mocks", mocksRouter);
 app.listen(PORT, () => {
   console.log(`Server running on http://localhost:${PORT}`);
 });
+
